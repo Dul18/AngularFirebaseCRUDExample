@@ -1,0 +1,25 @@
+
+<div>
+    <form (ngSubmit)="saveData()">
+
+        <div class="formline"> <input type="text" name="fname" placeholder="FirstName" value= "{{formdata.fname}}" [(ngModel)]= "formdata.fname"></div>
+       <div class="formline"><input type="text" name="lname" placeholder="LastName" value= "{{formdata.lname}}" [(ngModel)]= "formdata.lname"></div> 
+       <div class="formline"><input type="email" name="email" placeholder="Email"value= "{{formdata.email}}" [(ngModel)]= "formdata.email"></div> 
+       <div class="formline"> <input type="text" name="phone" placeholder="TelNo" value= "{{formdata.phone}}" [(ngModel)]= "formdata.phone"></div>
+       <div class="formline"> <input type="submit" value="save"></div>
+    </form>
+
+
+
+</div>
+
+<table>
+    <tr *ngFor="let address of addresses">
+        <td>{{address.id}}</td>
+        <td>{{address.fname}}</td>
+        <td>{{address.lname}}</td>
+        <td>{{address.email}}</td>
+        <td>{{address.phone}}</td>
+    </tr>
+</table>
+
