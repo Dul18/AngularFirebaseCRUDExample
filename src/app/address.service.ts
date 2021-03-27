@@ -31,4 +31,14 @@ export class AddressService {
     //then we have suscribe 
     // go to address.com.ts
   }
+
+  updateAddress(address:Address){
+
+    this.firestore.doc('address/'+ address.id).update({...address})
+
+  }
+
+  deleteAddress(address: Address){
+    this.firestore.doc('address/'+ address.id).delete()
+  }
 }

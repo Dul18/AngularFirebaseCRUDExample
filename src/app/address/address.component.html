@@ -13,13 +13,28 @@
 
 </div>
 
-<table>
-    <tr *ngFor="let address of addresses">
-        <td>{{address.id}}</td>
-        <td>{{address.fname}}</td>
-        <td>{{address.lname}}</td>
-        <td>{{address.email}}</td>
-        <td>{{address.phone}}</td>
-    </tr>
-</table>
+<div>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+        </tr>
+        <tr *ngFor="let address of addresses">
+            <td>{{address.id}}</td>
+            <td>{{address.fname}}</td>
+            <td>{{address.lname}}</td>
+            <td>{{address.email}}</td>
+            <td>{{address.phone}}</td>
+            <td><button (click)="editData(address)">Edit</button></td>
+            <td><button (click)="deleteData(address)">Delete</button></td>
+        </tr>
+    </table>
+
+
+</div>
+
+
 

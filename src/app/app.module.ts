@@ -33,6 +33,7 @@ import { environment} from '../environments/environment';
     AngularFireDatabaseModule
 
   ],
+  //we have to provide service (injectable class) into providers
   providers: [AddressService],
   bootstrap: [AppComponent]
 })

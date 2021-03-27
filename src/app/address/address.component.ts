@@ -21,14 +21,17 @@ export class AddressComponent implements OnInit {
 
     (data)=>{
 
-    this.addresses =  data.map ( (document)=>{
+    
+      this.addresses=data.map((document)=>{
 
         return {
+
           id:document.payload.doc.id,
-          ...document.payload.doc.data as {}
+          ...document.payload.doc.data() as {}
         } as Address
-      }
-       )
+
+      })
+        
 
       console.log("Data Recieved >>", data)
     }
@@ -40,7 +43,29 @@ export class AddressComponent implements OnInit {
     console.log("Saving Data");
     console.log(this.formdata);
     //pase the form data to the service
-    return this.addressService.saveAddress(this.formdata);
+
+    if(this.formdata.id==null){
+      this.addressService.saveAddress(this.formdata);
+    }
+
+    else{
+
+      this.addressService.updateAddress(this.formdata)
+    }
+
+    this.formdata = new Address();
+    
+  }
+
+  editData(address: Address) {
+
+      this.formdata=address;
+  }
+
+  deleteData(address: Address){
+
+    this.addressService.deleteAddress(address)
+
   }
 
 }

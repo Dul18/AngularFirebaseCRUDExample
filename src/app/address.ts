@@ -1,7 +1,7 @@
-export class Address {
+export class Address{
     id: string;
-    fname: string;
+    fname:string;
     lname: string;
-    email: string;
-    phone: string;
+    email:string;
+    phone:string;
 }
